@@ -1,0 +1,11 @@
+{
+  "name": "greetings",
+  "version": "1.0.0",
+  "description": "In this project we will create a smart contract with the state of a single string. There will be one function with expects a string parameter, which updates the string in the state. Thus the only possible transaction is to change the string state.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
