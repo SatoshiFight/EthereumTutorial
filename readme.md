@@ -1,3 +1,22 @@
+## Instaling development environment
+
+- install homebrew
+
+```
+brew tap ethereum/ethereum
+brew install ethereum
+```
+
+- install Ganache from their Github, version 1.0.1
+- install latest version of node and npm
+- Install Truffle 4.0.4
+
+```
+npm install truffle@4.0.4
+```
+- You can use Atom or Visual Studio Code to code smart contracts.
+- Install the Metamask chrome extension
+
 ## Creating a private ethereum node
 
 ### Create your own private ethereum node
@@ -15,7 +34,9 @@ To establish a new ethereum node the following steps need to be completed:
 
 - mkdir -p ~/ChainSkills/private
 - cd ChainSkills/private
-- puppeth
+
+``` puppeth```
+
 - Input your network name
 - Choose to configure new genesis
 - Choose Ethash - proof-of-work
@@ -36,7 +57,8 @@ To establish a new ethereum node the following steps need to be completed:
 
 ##### Start the node
 
-- chmod +x startnode.sh
+```chmod +x startnode.sh```
+
 - (Also view the contents inside startnode.sh -> At minute 15 in Setting Up A private node video in the course)
 - **Watch out. It's important that you verify in the console output that the IPC endpoint opened is ~/Library/Ethereum/geth.ipc, because all applications look for it there by default!**
 - Also note that this path is for Mac OS X, on other system the default directory where ```geth attach``` looks for the IPC enpoints might be different.
