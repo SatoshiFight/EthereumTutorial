@@ -1,3 +1,7 @@
+### Good sites to visit with useful information
+
+- https://ethgasstation.info/index.php - Calculations of gas price
+
 ## Instaling development environment
 
 - install homebrew
