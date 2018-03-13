@@ -69,7 +69,7 @@ To establish a new ethereum node the following steps need to be completed:
 
 ##### Attach to the node
 
-- geth attach
+- ```geth attach``` . You can also use ```geth attach ipc:\\.\pipe\geth.ipc```
 - (Here it's important that IPC endpoint is opened at ~/Library/Ethereum/geth.ipc, because the attach command looks for it there.)
 - You can attach to it as an IPC or RPC endpoint. IPC by default. Both have their advantages.
 - After this, you can use the REPL to try out javascript commands. To see some commands, look bellow in the cheatsheets.

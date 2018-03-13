@@ -137,6 +137,21 @@ Getting only the last event is a good idea when possible, because large calls li
 
 - In ```app.js``` there is a function ```listenToEvents``` which we call from the ```initContract``` function.
 
+## Deploying the application on a private network
+
+- For this, you need to update your truffle to 4.0.7.
+```
+npm uninstall -g truffle
+npm instasll -g truffle@4.0.7
+```
+
+- This starts at lecture 53 in the course.
+
+- Why would I even want to deploy to a private network when I have Ganache?
+	- Private is closer to the real world scenario. Ganache is great because it speeds up your development, but every once in a while you should deploy to a private network.
+		- Ganache: in memory, 1 transaction per block, Near-synchronous tx, accounts unlocked by default.
+		- Private: on disc, N transactions per block,  long transaction confirmation times, locked accounts.
+
 # ChainSkills Truffle Box
 
 This Truffle Box has all you need to create a DApp by following the course delivered by [ChainSkills](https://www.udemy.com/getting-started-with-ethereum-solidity-development/).
