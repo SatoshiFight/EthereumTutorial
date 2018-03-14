@@ -195,80 +195,14 @@ npm instasll -g truffle@4.0.7
 
 ## List of articles
 
-This part will be focused on the ability not to just sell one article, but a whole list of articles. Here, we will meet more advanced data types and structures:
-	- mappings
-	- structures
-	- loops
-	- arrays
-	- **memory vs storage**
-
-### Updating the smart contract
-
-- We will add a new structure to hold all the data for each article, instead of having global variables within the contract.
-
-```
-struct Article {
-	uint id;
-	address seller;
-	address buyer;
-	string name;
-	string description;
-	uint256 price;
-}
-```
-
-- We will add a mapping now!
-	- The mapping is very limited. There is no way to know the size of the mapping, no way to iterate over it or even verify whether the key exists. Only thing you can do is change the value associated with it, or retrieve it. If a key is not associated to any value, then it will default to 0.
-
-```
-mapping (uint => Article) public articles;
-uint articleCounter; // because there's no way to keep track of map size, we keep the number of articles in here.
-```
-
-- Now we have to change the sellArticle() implementation.
-	- we need to now use the mapping as an array and assign the articles increasingly higher integer keys, and keep track of the highest value.
-
-- Next you need to change buyArticle(uint _id)
-
-**how to use mappings and structs**
-```
-articles[id] = Article(articleCounter, ... args);
-Article storage article = articles[id];
-article.buyer = addr;
-```
-
-- **Solidity limitation: You can't return an array of structure times at this moment. So your best bet is to return ids.**
-
-### Tests in list of articles
-
-- Just copied and skipped this part, as when you see the tests they are very self-explanatory.
-
-### Frontend for list of articles
-
-- Adjusted the frontend - now it is able to render all of the articles and you can buy any one of them. There was nothing much new about it. The major changes were made in the smart contract.
+This part will be focused on the ability not to just sell one article, but a whole list of articles.
 
 ## Debugging a function
 - in the truffle console you may use
 ```debug <tx hash>```
 - example:
 ```debug '0x912374y59248237h23917hc'```
-- Debugger won't give you a lot of information, but it will tell you exactly where the exception was thrown.
-
-- **WHAT IS THE DIFFERENCE BETWEEN STORAGE AND MEMORY?**
-
-## Deactivating a contract
-
-- You need to call the selfdestruct function.
-	- It has parameter that's an address. This is the address to send all the funds that are still in the smart contract.
-	- You need to only allow the contract owner to be able to call the self-destruct function
-
-- To do:
-	- Create a new global variable called ```address owner```
-	- Create a constructor, where you save the address that deployed the contract as the contract owner
-	- Create the destructor
-- **It's very important to commmunicate to your users when they should not use the contract anymore, because the functions may still be called, and you will waste ether, but the state will not be changed.**
-
-- ```https://ens.domains/``` - domain name on ethereum (DNS).
+- Debugger won't give you a lot of information, but it will tell you exactly where the exception we thrown.
 
 # ChainSkills Truffle Box
 
