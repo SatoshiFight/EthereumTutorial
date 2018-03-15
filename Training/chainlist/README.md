@@ -57,7 +57,9 @@ Warning: each test will redeploy the contract to the net, which costs gas. This 
 
 This project relies of the chainskills truffle box. There are already some dependencies installed via npm, stated in the ```package.json```.
 
+- Navigate to the root of the project directory.
 - Run ```npm install``` to install the frontend dependencies.
+- Use ```npm run dev``` to run the frontend. This will host it on ```localhost:3000```.
 
 With npm, we install ```lite server```, which is used to host our web application. Also includes express.
 
